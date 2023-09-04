@@ -8,7 +8,7 @@ import serial
 
 ArduinoSerial=serial.Serial('/dev/cu.usbmodem101',9600,timeout=0.1)
 
-def eyeballs():
+def tracker():
     cap = cv2.VideoCapture(0)
     detector = FaceDetector(minDetectionCon=0.5)
 
@@ -26,7 +26,7 @@ def eyeballs():
         cv2.imshow("Image", img)
         cv2.waitKey(1)
 
-def mouth():
+def assistant():
     openai.api_key = ('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')
     messages = [ {"role": "system", "content": 
                 "You are a intelligent assistant."} ]
@@ -98,7 +98,7 @@ def mouth():
                     takingInput=False
 
 if __name__ == '__main__':
-    p = Process(target=mouth)
-    p2 = Process(target=eyeballs)
+    p = Process(target=assistant)
+    p2 = Process(target=tracker)
     p.start()
     p2.start()
