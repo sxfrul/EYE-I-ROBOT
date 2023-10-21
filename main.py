@@ -17,15 +17,22 @@ def tracker():
         img=cv2.flip(img,1)
         img, bboxs = detector.findFaces(img)
 
-        bboxsArea = []
+        myList = []
 
         for bbox in bboxs:
-            x, y, w, h = bboxs[0]["bbox"]
+            x, y, w, h = bbox["bbox"]
             area = w*h
-            print(area)
-            bboxsArea.append(area)
+            bbox["area"] = area
+            myList.append(bbox)
+        
+        print(myList)
+        if not myList:
+            # does not exist
+            continue
+        else:
+            max_area_dict = max(myList, key=lambda x: x["area"])
+            print(max_area_dict)
 
-        print(bboxsArea)
 
 
 
