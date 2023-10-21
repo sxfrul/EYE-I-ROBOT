@@ -17,11 +17,22 @@ def tracker():
         img=cv2.flip(img,1)
         img, bboxs = detector.findFaces(img)
 
-        if bboxs:
-            w1, h1 = bboxs[0]["bbox"]
+        bboxsArea = []
+
+        for bbox in bboxs:
+            x, y, w, h = bboxs[0]["bbox"]
+            area = w*h
+            print(area)
+            bboxsArea.append(area)
+
+        print(bboxsArea)
+
+
+
+        # if bboxs:
+        #     x1, y1, w1, h1 = bboxs[0]["bbox"]
             # center = bboxs[0]["center"]
             # coordinates = str(center)
-            print(f"width: {w1} and height: {h1}")
             # ArduinoSerial.write(coordinates.encode('utf-8'))
             
 
