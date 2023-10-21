@@ -18,8 +18,10 @@ def tracker():
         img, bboxs = detector.findFaces(img)
 
         if bboxs:
-            center = bboxs[0]["center"]
-            coordinates = str(center)
+            w1, h1 = bboxs[0]["bbox"]
+            # center = bboxs[0]["center"]
+            # coordinates = str(center)
+            print(f"width: {w1} and height: {h1}")
             # ArduinoSerial.write(coordinates.encode('utf-8'))
             
 
