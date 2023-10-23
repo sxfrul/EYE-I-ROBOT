@@ -35,7 +35,6 @@ def tracker():
             max_area_dict = max(myList, key=lambda x: x["area"])
             if max_area_dict:
                 center = max_area_dict["center"]
-                print(center)
                 coordinates = str(center)
                 ArduinoSerial.write(coordinates.encode('utf-8'))
 
