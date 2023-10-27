@@ -39,7 +39,7 @@ def tracker():
                 ArduinoSerial.write(coordinates.encode('utf-8'))
 
 
-        cv2.imshow("Image", img)
+        cv2.imshow("EYE(i) ROBOT", img)
         cv2.waitKey(1)
 
 def assistant():
