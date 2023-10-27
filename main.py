@@ -61,7 +61,7 @@ def assistant():
         system("say Please wait, calibrating microphone..")
         r.adjust_for_ambient_noise(source, duration=1.5)
         #ArduinoSerial.write(outputting.encode('utf-8'))
-        system("say your personal robot companion is now online")
+        system("say EYE robot is now online")
         while True:
             #inputting
             listening = True
@@ -72,7 +72,7 @@ def assistant():
                     message = r.recognize_google(audio)
                     message = message.lower()
 
-                    if "computer" in message:
+                    if "eye robot" or "irobot" in message:
                         #outputting
                         #ArduinoSerial.write(outputting.encode('utf-8'))
                         system("say Yes how can i assist you?")
