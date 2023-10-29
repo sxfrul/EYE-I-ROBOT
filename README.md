@@ -5,7 +5,8 @@ User-tracking robotic eyes hooked up with ChatGPT (as brainpower) to serve as ge
 ### Achievement
 - Won 3rd place in UITM's Arduino Showcase 2023 (cash-prize of RM100)
 
-<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/4cb538b7-96b2-477a-8499-15483191adfd" width="700" height="auto">
+<img alt="The booth" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/4cb538b7-96b2-477a-8499-15483191adfd" width="500" height="auto">
+<img alt="Cash prize" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/0d9d6518-53f1-4785-84a0-59b091373b7d" width=500">
 
 ### Shortcoming
 - Microphone does not pick up wakewords in a loud environment
