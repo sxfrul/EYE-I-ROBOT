@@ -2,10 +2,10 @@
 User-tracking robotic eyes hooked up with ChatGPT (as brainpower) to serve as generic personal assistant robot
 
 
-# Achievement:
+## Achievement:
 - Won 3rd place in UITM's Arduino Showcase 2023
 
-# Shortcoming:
+## Shortcoming:
 - Microphone does not pick up wakewords in a loud environment
 - Goes crazy when there is more than one person detected on tracker
 - Bad build quality
