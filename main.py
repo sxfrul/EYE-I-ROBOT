@@ -128,10 +128,10 @@ def tracker():
                 x_coords, y_coords = re.findall(r'\d+', coordinates)
 
                 # mapping coords to servo range
-                servoX_coords = (int(x_coords)*2500) / 1280
-                servoY_coords = (int(y_coords)*2500) / 720
-                print(f"{x_coords} {y_coords}")
-                print(f"{servoX_coords} {servoY_coords}")
+                servoX_coords = (int(x_coords)*2500) / 1024
+                servoY_coords = (int(y_coords)*2500) / 768
+                # print(f"{x_coords} {y_coords}")
+                # print(f"{servoX_coords} {servoY_coords}")
 
                 pwm.setServoPulse(servoX_pin, servoX_coords)
                 pwm.setServoPulse(servoY_pin, servoY_coords)
