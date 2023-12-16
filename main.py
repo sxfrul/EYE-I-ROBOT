@@ -159,7 +159,8 @@ def assistant():
         #processing
         #ArduinoSerial.write(processing.encode('utf-8'))
         system("say Please wait, calibrating microphone..")
-        r.adjust_for_ambient_noise(source, duration=1.5)
+        r.adjust_for_ambient_noise(source, duration=5) 
+        r.dynamic_energy_threshold = True 
         #ArduinoSerial.write(outputting.encode('utf-8'))
         system("say EYE robot is now online")
         while True:
