@@ -4,7 +4,7 @@ from cvzone.FaceDetectionModule import FaceDetector
 
 import cv2, base64
 
-port = 80
+port = 8000
 
 print("Started server on port : ", port)
 
@@ -37,7 +37,7 @@ async def transmit(websocket, path):
             # if cv2.waitKey(1) & 0xFF == ord('q'):
             #     break
         cap.release()
-    except websockets.connection.ConnectionClosed as e:
+    except (websockets.exceptions.ConnectionClosedOK, websockets.exceptions.ConnectionClosedError) as e:
         print("Client Disconnected !")
         cap.release()
     # except:
