@@ -128,7 +128,7 @@ def tracker():
                 coordinates = str(center)
                 x_coords, y_coords = re.findall(r'\d+', coordinates)
 
-                # mapping coords to servo range
+                # Mapping coords to servo range
                 servoX_coords = ((int(x_coords)*1200) / 1024) + 1200
                 servoY_coords = ((int(y_coords)*1500) / 768) + 1200
                 # print(f"{x_coords} {y_coords}")
@@ -139,7 +139,7 @@ def tracker():
                 # pwm.setServoPulse(0,coordinates)
                 # ArduinoSerial.write(coordinates.encode('utf-8'))
 
-
+        # No imshow for no gui use case
         cv2.imshow("EYE(i) ROBOT", img)
         cv2.waitKey(1)
 
@@ -216,9 +216,9 @@ def assistant():
                     takingInput=False
 
 if __name__ == '__main__':
-    p = Process(target=assistant)
+    #p = Process(target=assistant)
     p2 = Process(target=tracker)
-    p.start()
+    #p.start()
     p2.start()
 
 # if __name__=='__main__':
