@@ -196,7 +196,7 @@ if __name__ == '__main__':
     # p = Process(target=test)
     # p.start()
     test = 10
-    start_server = websockets.serve(functools.partial(transmit, initial_number=test), host="192.168.0.140", port=port)
+    start_server = websockets.serve(functools.partial(transmit, initial_number=test), host="192.168.0.170", port=port)
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
 
