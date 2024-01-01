@@ -129,8 +129,8 @@ def tracker():
                 x_coords, y_coords = re.findall(r'\d+', coordinates)
 
                 # mapping coords to servo range
-                servoX_coords = (int(x_coords)*2500) / 1024
-                servoY_coords = (int(y_coords)*2500) / 768
+                servoX_coords = ((int(x_coords)*1200) / 1024) + 1200
+                servoY_coords = ((int(y_coords)*1500) / 768) + 1200
                 # print(f"{x_coords} {y_coords}")
                 # print(f"{servoX_coords} {servoY_coords}")
 
