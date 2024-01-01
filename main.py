@@ -99,6 +99,7 @@ def tracker():
     pwm = PCA9685(0x40, debug=False)
     pwm.setPWMFreq(50)
     cap = cv2.VideoCapture(0)
+    #cap = cv2.VideoCapture(0, cv2.CAP_V4L2)
     detector = FaceDetector(minDetectionCon=0.5)
 
     while True:
