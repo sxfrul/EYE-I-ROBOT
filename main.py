@@ -1,21 +1,23 @@
 from multiprocessing import Process
-from cvzone.FaceDetectionModule import FaceDetector
+
+# ASSISTANT
 import speech_recognition as sr  
-from os import system
+from os import system #mac approach
+#import pyttsx3 #linux/windows approach
 import openai
-import cv2
+
+# TRACKER
+from cvzone.FaceDetectionModule import FaceDetector
+import cv2, base64 #encoding-purpose
 import re
 
-# ArduinoSerial=serial.Serial('/dev/cu.usbmodem101',9600,timeout=0.1)
-
-#!/usr/bin/python
-
+# SERVO CONTROLLER
 import time
 import math
 import smbus
 
 # ============================================================================
-# Raspi PCA9685 16-Channel PWM Servo Driver
+# Raspi PCA9685
 # ============================================================================
 
 class PCA9685:
@@ -131,13 +133,9 @@ def tracker():
                 # Mapping coords to servo range
                 servoX_coords = ((int(x_coords)*1200) / 1024) + 1200
                 servoY_coords = ((int(y_coords)*1500) / 768) + 1200
-                # print(f"{x_coords} {y_coords}")
-                # print(f"{servoX_coords} {servoY_coords}")
 
                 pwm.setServoPulse(servoX_pin, servoX_coords)
                 pwm.setServoPulse(servoY_pin, servoY_coords)
-                # pwm.setServoPulse(0,coordinates)
-                # ArduinoSerial.write(coordinates.encode('utf-8'))
 
         # No imshow for no gui use case
         cv2.imshow("EYE(i) ROBOT", img)
@@ -157,40 +155,30 @@ def assistant():
     inputting = ("input")
     
     with source:
-        #processing
-        #ArduinoSerial.write(processing.encode('utf-8'))
         system("say Please wait, calibrating microphone..")
         r.adjust_for_ambient_noise(source, duration=5) 
         r.dynamic_energy_threshold = True 
-        #ArduinoSerial.write(outputting.encode('utf-8'))
+
         system("say EYE robot is now online")
         while True:
-            #inputting
             listening = True
             while listening:
-                #ArduinoSerial.write(inputting.encode('utf-8'))
                 audio = r.listen(source)
                 try:
                     message = r.recognize_google(audio)
                     message = message.lower()
 
                     if "eye robot" or "irobot" in message:
-                        #outputting
-                        #ArduinoSerial.write(outputting.encode('utf-8'))
                         system("say Yes how can i assist you?")
                         listening = False
                 except:
                     continue
-            #inputting
-            #ArduinoSerial.write(inputting.encode('utf-8'))
             takingInput = True
-            while takingInput: #make the led go orange
+            while takingInput:
                 audio = r.listen(source)
                 try:
-                    #ArduinoSerial.write(processing.encode('utf-8'))
                     message = r.recognize_google(audio)
                     message = message.lower()
-                    #processing
                     message = ("Talk like a human and give me the simplest answers only, " + message)
                     print(message)
                     system("say Please wait while i look through my database    ")
@@ -202,16 +190,11 @@ def assistant():
                             model="gpt-3.5-turbo", messages=messages
                         )
                     reply = chat.choices[0].message.content
-                    #make led go green
-                    #outputting
-                    #ArduinoSerial.write(outputting.encode('utf-8'))
                     system("say According to my database")
                     system('say "{}"'. format(reply))
                     messages.append({"role": "assistant", "content": reply})
                     takingInput = False
                 except:
-                    #outputting
-                    #ArduinoSerial.write(outputting.encode('utf-8'))
                     system("say no command given. please retry")
                     takingInput=False
 
