@@ -1,24 +1,27 @@
-# server original dependencies:
 from multiprocessing import Process
+
+# WS SERVER
 import websockets
 import asyncio
-from cvzone.FaceDetectionModule import FaceDetector
-import time
-import cv2, base64
-import functools
+import functools #to use additional parameter
 
-#eyero original dependencies:
+port = 8000
+
+# ASSISTANT
 import speech_recognition as sr  
-from os import system
+from os import system #mac approach
+#import pyttsx3 #linux/windows approach
 import openai
+
+# TRACKER
+from cvzone.FaceDetectionModule import FaceDetector
+import cv2, base64 #encoding-purpose
 import re
 
-#waveshare original dependencies:
+# SERVO CONTROLLER
 import time
 import math
 import smbus
-
-port = 8000
 
 # Waveshare Module
 class PCA9685:
