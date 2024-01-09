@@ -69,9 +69,7 @@ def transcript():
     message = r.recognize_google(audio)
     return message
 
-if __name__ == "__main__":
-    while True:
-        record()
-        msg = transcript()
-        print("Finished Transcripting")
-        print(msg)
+def recordAndTranscript():
+    record()
+    message = transcript()
+    return message
