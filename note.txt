@@ -1,0 +1,11 @@
+- everything works
+- uses 2 powersupply
+
+cleanup
+- servoModule in separate
+- tts engine in separate
+- server is in another process
+
+plan
+- add gpio live status
+- make it only one power supply
