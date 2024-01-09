@@ -149,10 +149,6 @@ def assistant():
     # obtain audio from the microphone  
     r = sr.Recognizer()  
     source = sr.Microphone()
-
-    outputting = ("output")
-    processing = ("process")
-    inputting = ("input")
     
     with source:
         system("say Please wait, calibrating microphone..")
