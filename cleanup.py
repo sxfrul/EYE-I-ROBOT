@@ -12,7 +12,7 @@ from transcript import recordAndTranscript
 
 # TRACKER
 from cvzone.FaceDetectionModule import FaceDetector
-import cv2, base64 #encoding-purpose
+import cv2
 import re
 import servoModule
 
