@@ -43,8 +43,8 @@ async def transmit(websocket, path):
         pwm.setPWMFreq(50)
         
         #Raspberry Pi Camera
-        #cap = cv2.VideoCapture(0, cv2.CAP_V4L2)
-        cap = cv2.VideoCapture(0) 
+        cap = cv2.VideoCapture(0, cv2.CAP_V4L2)
+        
         detector = FaceDetector(minDetectionCon=0.5)
 
         while cap.isOpened():
@@ -77,13 +77,9 @@ async def transmit(websocket, path):
                     # Mapping coords to servo range
                     servoX_coords = ((int(x_coords)*1200) / 1024) + 1200
                     servoY_coords = ((int(y_coords)*1500) / 768) + 1200
-                    # print(f"{x_coords} {y_coords}")
-                    # print(f"{servoX_coords} {servoY_coords}")
 
                     pwm.setServoPulse(servoX_pin, servoX_coords)
                     pwm.setServoPulse(servoY_pin, servoY_coords)
-                    # pwm.setServoPulse(0,coordinates)
-                    # ArduinoSerial.write(coordinates.encode('utf-8'))
             
             encoded = cv2.imencode('.jpg', frame)[1]
 
