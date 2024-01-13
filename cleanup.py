@@ -2,9 +2,11 @@ from multiprocessing import Process
 
 # WS SERVER
 import websockets
+import socket
 import asyncio
 
 server_port = 8000
+serverAddress = socket.gethostbyname(socket.gethostname())
 
 # IMPORT SPEECHRECOGNITION
 import openai
@@ -99,7 +101,7 @@ async def transmit(websocket, path):
         
 def serverProcess():
     print("Server process is starting..")
-    start_server = websockets.serve(transmit, host="192.168.0.170", port=server_port)
+    start_server = websockets.serve(transmit, host=serverAddress, port=server_port)
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
 

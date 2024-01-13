@@ -2,10 +2,12 @@ from multiprocessing import Process
 
 # WS SERVER
 import websockets
+import socket
 import asyncio
 import functools #to use additional parameter
 
 port = 8000
+serverAddress = socket.gethostbyname(socket.gethostname())
 
 # ASSISTANT
 import speech_recognition as sr  
@@ -199,7 +201,7 @@ if __name__ == '__main__':
     # p = Process(target=test)
     # p.start()
     test = 10
-    start_server = websockets.serve(functools.partial(transmit, initial_number=test), host="192.168.0.170", port=port)
+    start_server = websockets.serve(functools.partial(transmit, initial_number=test), host=serverAddress, port=port)
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
 
