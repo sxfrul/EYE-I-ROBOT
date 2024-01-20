@@ -62,8 +62,8 @@ def record():
     wavefile.close()
 
 def transcript():
-    test = sr.AudioFile('test1.wav')
-    with test as source:
+    speech = sr.AudioFile('sp.wav')
+    with speech as source:
         audio = r.record(source)
 
     message = r.recognize_google(audio)

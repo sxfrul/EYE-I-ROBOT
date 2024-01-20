@@ -5,7 +5,7 @@ import websockets
 import socket
 import asyncio
 
-server_port = 8000
+serverPort = 8000
 serverAddress = socket.gethostbyname(socket.gethostname())
 
 # IMPORT SPEECHRECOGNITION
@@ -99,14 +99,14 @@ async def transmit(websocket, path):
     # except:
     #     print("Someting went Wrong !")
         
-def serverProcess():
+def server_process():
     print("Server process is starting..")
-    start_server = websockets.serve(transmit, host=serverAddress, port=server_port)
+    start_server = websockets.serve(transmit, host=serverAddress, port=serverPort)
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
 
 if __name__ == "__main__":
-    server = Process(target=serverProcess)
+    server = Process(target=server_process)
     server.start()
 
     openai.api_key = ('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')
