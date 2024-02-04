@@ -1,0 +1,3 @@
+- separate the frame for detecting face and frame to stream
+- improves the performance
+- send stream when connected, if not still have the servo working without client connection
