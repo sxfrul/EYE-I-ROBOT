@@ -33,10 +33,11 @@ def speak(text):
     engine.runAndWait()
 
 def vision():
+    print("Starting camera...")
     try :
 
-        servoX_pin = 15
-        servoY_pin = 14
+        servoX_pin = 0
+        servoY_pin = 3
 
         servoXi = 1500
         servoYi = 1500
@@ -183,8 +184,10 @@ def server_process():
     asyncio.get_event_loop().run_forever()
 
 if __name__ == "__main__":
+    camera = Process(target=vision)
     server = Process(target=server_process)
     server.start()
+    camera.start()
 
     openai.api_key = ('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')
     messages = [ {"role": "system", "content":
