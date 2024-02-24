@@ -1,4 +1,4 @@
-![b6dc08b6-2268-49f9-b841-ca46dfb3ab0a](https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/acf9c1e6-5475-424f-a133-0f9073220cca)[EYE(i) ROBOT ABSTRACT - PIITRAM2024 (1).pdf](https://github.com/sxfrul/EYE-I-ROBOT/files/14393277/EYE.i.ROBOT.ABSTRACT.-.PIITRAM2024.1.pdf)# EYE-I-ROBOT's Competition History
+# EYE-I-ROBOT's Competition History
 
 ## UiTM Arduino Showcase 2023
 
@@ -26,14 +26,14 @@ User-tracking robotic eyes hooked up with ChatGPT (as brainpower) to serve as ge
 Download Abstract Here:
 [EYE(i) ROBOT ABSTRACT - PIITRAM2024.pdf](https://github.com/sxfrul/EYE-I-ROBOT/files/14393279/EYE.i.ROBOT.ABSTRACT.-.PIITRAM2024.1.pdf)
 
-![image](https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/f0701f14-698f-42ee-aa6d-6483e16673dd)
+<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/f0701f14-698f-42ee-aa6d-6483e16673dd" width"500")
 ![6095425638964450851-ezgif com-video-to-gif-converter](https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/d7a42cb5-03e3-43d8-a0ee-2665e0a20a9e)
 
 ### Achievement
 - awarded Silver in Category A
 
-![b6dc08b6-2268-49f9-b841-ca46dfb3ab0a](https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/9ad52ce4-22c5-477f-9243-ce44b71af981)
-![28C1CE2F-7604-43C3-AF95-F2332D219511](https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/eed71928-54a6-41f3-9a02-facc9cd098de)
+<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/9ad52ce4-22c5-477f-9243-ce44b71af981" width="500">
+<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/eed71928-54a6-41f3-9a02-facc9cd098de" width="500">
 
 ### Update Log
 - developed an app (unfinished)
