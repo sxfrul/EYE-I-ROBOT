@@ -1,4 +1,4 @@
-# EYE-I-ROBOT's Competition History
+[EYE(i) ROBOT ABSTRACT - PIITRAM2024 (1).pdf](https://github.com/sxfrul/EYE-I-ROBOT/files/14393277/EYE.i.ROBOT.ABSTRACT.-.PIITRAM2024.1.pdf)# EYE-I-ROBOT's Competition History
 
 ## UiTM Arduino Showcase 2023
 
@@ -20,4 +20,13 @@ User-tracking robotic eyes hooked up with ChatGPT (as brainpower) to serve as ge
 - Not a fully embedded machine
 - Does not have an actual monetizable use case (aside from being able to track and talk)
 
-### PIITRAM 2024 (at USIM)
+## PIITRAM 2024 (at USIM)
+
+### Description
+[IN WRITTEN ABSTRACT]
+[EYE(i) ROBOT ABSTRACT - PIITRAM2024 (1).pdf](https://github.com/sxfrul/EYE-I-ROBOT/files/14393279/EYE.i.ROBOT.ABSTRACT.-.PIITRAM2024.1.pdf)
+
+https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/2e691b04-bef2-4d54-afa1-784e186ab55b
+
+
+
