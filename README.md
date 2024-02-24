@@ -1,6 +1,6 @@
 # EYE-I-ROBOT's Competition History
 
-### UiTM Arduino Showcase 2023
+## UiTM Arduino Showcase 2023
 
 ### Description
 User-tracking robotic eyes hooked up with ChatGPT (as brainpower) to serve as generic personal assistant robot
