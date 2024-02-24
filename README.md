@@ -35,5 +35,19 @@ Download Abstract Here:
 ![b6dc08b6-2268-49f9-b841-ca46dfb3ab0a](https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/9ad52ce4-22c5-477f-9243-ce44b71af981)
 ![28C1CE2F-7604-43C3-AF95-F2332D219511](https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/eed71928-54a6-41f3-9a02-facc9cd098de)
 
+### Update Log
+- developed an app (unfinished)
+- pairs with a smart light as demo to test home automation
+- fully embedded on a Raspberry Pi 4B
+- is 3D printed (PETG+)
+- camera is now inside the eyeball itself
+- camera acceleration (using quadratics)
+
+### Future Plans
+- Allow users to register as "Friendly Members", whereby any motion detection on the "unregistereds" will send off an intruder alert to the app
+- Add status box for paired smart products (Time elapsed, Power Consumption)
+- Use only one powersupply
+- Resolve the servo power issue
+- Get better speaker
 
 
