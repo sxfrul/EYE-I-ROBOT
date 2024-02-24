@@ -26,13 +26,15 @@ User-tracking robotic eyes hooked up with ChatGPT (as brainpower) to serve as ge
 Download Abstract Here:
 [EYE(i) ROBOT ABSTRACT - PIITRAM2024.pdf](https://github.com/sxfrul/EYE-I-ROBOT/files/14393279/EYE.i.ROBOT.ABSTRACT.-.PIITRAM2024.1.pdf)
 
-<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/f0701f14-698f-42ee-aa6d-6483e16673dd" width="100">
+<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/f0701f14-698f-42ee-aa6d-6483e16673dd" width="150">
 
 ### Achievement
 - awarded Silver in Category A
 
 <img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/9ad52ce4-22c5-477f-9243-ce44b71af981" width="500">
 <img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/eed71928-54a6-41f3-9a02-facc9cd098de" width="200">
+<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/36040358-73a6-4d48-9bce-f90c2bf47970" width="500">
+<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/0774c03b-56b1-40b0-8f8f-d292546903e0" width="200">
 
 ### Update Log
 - developed an app (unfinished)
