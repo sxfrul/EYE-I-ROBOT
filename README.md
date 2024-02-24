@@ -36,6 +36,7 @@ Download Abstract Here:
 
 ### Update Log
 - developed an app (unfinished)
+
   ![6095425638964450851-ezgif com-video-to-gif-converter](https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/d7a42cb5-03e3-43d8-a0ee-2665e0a20a9e)
 - pairs with a smart light as demo to test home automation
 - fully embedded on a Raspberry Pi 4B
