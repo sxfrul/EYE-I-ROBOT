@@ -1,6 +1,6 @@
 # EYE-I-ROBOT
 
-#### Competition History
+## Competition History
 ### UiTM Arduino Showcase 2023
 
 ### Description
@@ -20,3 +20,5 @@ User-tracking robotic eyes hooked up with ChatGPT (as brainpower) to serve as ge
 - Bad build quality
 - Not a fully embedded machine
 - Does not have an actual monetizable use case (aside from being able to track and talk)
+
+### PIITRAM 2024 (at USIM)
