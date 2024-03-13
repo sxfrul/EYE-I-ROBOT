@@ -18,7 +18,7 @@ def home_automation(reply):
     for room in room_pins:
         if room in reply:
             print(f"[{room.upper()} LIGHTS]")
-            
+
             # Check if "on" or "off" is mentioned in the reply
             if "on" in reply:
                 GPIO.output(room_pins[room], GPIO.HIGH)
