@@ -6,3 +6,10 @@
 plan
 - add gpio live status
 - make it only one power supply
+
+plan (14/3/2024):
+- automatic speech recognition
+- GUI for eyeball
+- face detection
+- home automation
+- LLM integration
