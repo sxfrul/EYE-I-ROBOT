@@ -1,4 +1,3 @@
-<div align="center">
 
 # `EYE (i) ROBOT`
 
@@ -17,7 +16,6 @@
 
 # Competition History
 
-</div>
 
 
 ## UiTM Arduino Showcase 2023
