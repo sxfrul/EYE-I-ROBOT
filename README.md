@@ -9,15 +9,6 @@
 
 
 
-<p class="align center">
-<h4><code>EYE (i) ROBOT</code> is a better home assistant solution made using various AI techs</h4>
-</p>
-<br />
-<br />
-
-# Competition History
-
-
 
 ## UiTM Arduino Showcase 2023
 
