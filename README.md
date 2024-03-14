@@ -13,7 +13,7 @@
 </p>
 
 
-# EYE-I-ROBOT's Competition History
+# Competition History
 
 ## UiTM Arduino Showcase 2023
 
