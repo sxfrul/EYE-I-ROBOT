@@ -15,6 +15,9 @@
 
 # Competition History
 
+</div>
+
+
 ## UiTM Arduino Showcase 2023
 
 ### Description
@@ -66,6 +69,3 @@ Download Abstract Here:
 - Use only one powersupply
 - Resolve the servo power issue
 - Get better speaker
-
-</div>
-
