@@ -12,7 +12,6 @@
 <h4><code>EYE (i) ROBOT</code> is a better home assistant solution made using various AI techs</h4>
 </p>
 
-</div>
 
 ## EYE-I-ROBOT's Competition History
 
@@ -68,4 +67,5 @@ Download Abstract Here:
 - Resolve the servo power issue
 - Get better speaker
 
+</div>
 
