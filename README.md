@@ -2,12 +2,12 @@
 
 # `EYE (i) ROBOT`
 
-![Static Badge](https://img.shields.io/badge/mission-human_flourishing_via_AI_augmentation-purple)
+![Static Badge](https://img.shields.io/badge/mission-refining%20home%20assistants%20with%20AI-purple)
 <br />
-![GitHub top language](https://img.shields.io/github/languages/top/danielmiessler/fabric)
-![GitHub last commit](https://img.shields.io/github/last-commit/danielmiessler/fabric)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-https://img.shields.io/github/v/release/sxfrul/EYE-I-ROBOT
+![GitHub top language](https://img.shields.io/github/languages/top/sxfrul/EYE-I-ROBOT)
+![GitHub Release](https://img.shields.io/github/v/release/sxfrul/EYE-I-ROBOT)
+![GitHub last commit](https://img.shields.io/github/last-commit/sxfrul/EYE-I-ROBOT)
+
 
 
 <p class="align center">
