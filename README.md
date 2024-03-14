@@ -7,6 +7,8 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/danielmiessler/fabric)
 ![GitHub last commit](https://img.shields.io/github/last-commit/danielmiessler/fabric)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+https://img.shields.io/github/v/release/sxfrul/EYE-I-ROBOT
+
 
 <p class="align center">
 <h4><code>EYE (i) ROBOT</code> is a better home assistant solution made using various AI techs</h4>
