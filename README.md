@@ -1,3 +1,29 @@
+<div align="center">
+
+<img src="./images/fabric-logo-gif.gif" alt="fabriclogo" width="400" height="400"/>
+
+# `fabric`
+
+![Static Badge](https://img.shields.io/badge/mission-human_flourishing_via_AI_augmentation-purple)
+<br />
+![GitHub top language](https://img.shields.io/github/languages/top/danielmiessler/fabric)
+![GitHub last commit](https://img.shields.io/github/last-commit/danielmiessler/fabric)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+<p class="align center">
+<h4><code>fabric</code> is an open-source framework for augmenting humans using AI.</h4>
+</p>
+
+[Introduction Video](#introduction-video) •
+[What and Why](#whatandwhy) •
+[Philosophy](#philosophy) •
+[Quickstart](#quickstart) •
+[Structure](#structure) •
+[Examples](#examples) •
+[Meta](#meta)
+
+</div>
+
 # EYE-I-ROBOT's Competition History
 
 ## UiTM Arduino Showcase 2023
