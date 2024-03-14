@@ -2,7 +2,7 @@
 
 <img src="./images/fabric-logo-gif.gif" alt="fabriclogo" width="400" height="400"/>
 
-# `fabric`
+# `EYE (i) ROBOT`
 
 ![Static Badge](https://img.shields.io/badge/mission-human_flourishing_via_AI_augmentation-purple)
 <br />
@@ -24,7 +24,7 @@
 
 </div>
 
-# EYE-I-ROBOT's Competition History
+## EYE-I-ROBOT's Competition History
 
 ## UiTM Arduino Showcase 2023
 
