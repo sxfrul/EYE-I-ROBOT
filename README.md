@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="./images/fabric-logo-gif.gif" alt="fabriclogo" width="400" height="400"/>
-
 # `EYE (i) ROBOT`
 
 ![Static Badge](https://img.shields.io/badge/mission-human_flourishing_via_AI_augmentation-purple)
@@ -11,16 +9,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 <p class="align center">
-<h4><code>fabric</code> is an open-source framework for augmenting humans using AI.</h4>
+<h4><code>EYE (i) ROBOT</code> is a better home assistant solution made using various AI techs</h4>
 </p>
-
-[Introduction Video](#introduction-video) •
-[What and Why](#whatandwhy) •
-[Philosophy](#philosophy) •
-[Quickstart](#quickstart) •
-[Structure](#structure) •
-[Examples](#examples) •
-[Meta](#meta)
 
 </div>
 
