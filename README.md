@@ -20,8 +20,8 @@ User-tracking robotic eyes hooked up with ChatGPT (as brainpower) to serve as ge
 ### Achievement
 - Won 3rd place in UITM's Arduino Showcase 2023 (cash-prize of RM100)
 
-<img alt="The booth" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/4cb538b7-96b2-477a-8499-15483191adfd" width="500" height="auto">
-<img alt="Cash prize" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/0d9d6518-53f1-4785-84a0-59b091373b7d" width=500">
+<img alt="The booth" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/4cb538b7-96b2-477a-8499-15483191adfd" width=60% height="auto">
+<img alt="Cash prize" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/0d9d6518-53f1-4785-84a0-59b091373b7d" width=60%">
 
 ### Shortcoming
 - Microphone does not pick up wakewords in a loud environment
@@ -33,7 +33,7 @@ User-tracking robotic eyes hooked up with ChatGPT (as brainpower) to serve as ge
 ## PIITRAM 2024 (at USIM)
 
 ### Description
-Download Abstract Here:
+Download Abstract:
 [EYE(i) ROBOT ABSTRACT - PIITRAM2024.pdf](https://github.com/sxfrul/EYE-I-ROBOT/files/14393279/EYE.i.ROBOT.ABSTRACT.-.PIITRAM2024.1.pdf)
 
 <img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/f0701f14-698f-42ee-aa6d-6483e16673dd" width="150">
@@ -41,9 +41,9 @@ Download Abstract Here:
 ### Achievement
 - awarded Silver in Category A
 
-<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/9ad52ce4-22c5-477f-9243-ce44b71af981" width="500">
-<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/eed71928-54a6-41f3-9a02-facc9cd098de" width="200">
-<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/36040358-73a6-4d48-9bce-f90c2bf47970" width="500">
+<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/9ad52ce4-22c5-477f-9243-ce44b71af981" width=60%>
+<img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/36040358-73a6-4d48-9bce-f90c2bf47970" width=60%>
+<br />
 
 ### Update Log
 - developed an app (unfinished)
