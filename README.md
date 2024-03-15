@@ -28,7 +28,7 @@ User-tracking robotic eyes hooked up with ChatGPT (as brainpower) to serve as ge
 <img alt="The booth" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/4cb538b7-96b2-477a-8499-15483191adfd" width=60% height="auto">
 <img alt="Cash prize" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/0d9d6518-53f1-4785-84a0-59b091373b7d" width=60%">
 
-### Shortcoming
+### Shortcomings
 - Microphone does not pick up wakewords in a loud environment
 - Goes crazy when there is more than one person detected on tracker
 - Bad build quality
@@ -43,7 +43,7 @@ Download Abstract:
 
 <img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/f0701f14-698f-42ee-aa6d-6483e16673dd" width="150">
 
-### Achievement
+### Achievements
 - awarded Silver in Category A
 
 <img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/9ad52ce4-22c5-477f-9243-ce44b71af981" width=60%>
