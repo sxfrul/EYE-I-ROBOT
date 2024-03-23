@@ -18,7 +18,7 @@ int main() {
     }
 
     // Create a window to display the camera feed
-    cv::namedWindow("Webcam", cv::WINDOW_NORMAL);
+    cv::namedWindow("Face Detection", cv::WINDOW_NORMAL);
 
     while (true) {
         cv::Mat frame;
@@ -41,7 +41,7 @@ int main() {
 
         // Draw rectangles around detected faces
         for (const auto& face : faces) {
-            cv::rectangle(frame, face, cv::Scalar(255, 0, 0), 2);
+            cv::rectangle(frame, face, cv::Scalar(0, 255, 0), 2);
         }
 
         // Display the frame with detected faces
