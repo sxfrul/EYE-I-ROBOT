@@ -40,6 +40,7 @@ class WebcamApp:
             area = w*h
             bbox["area"] = area
             myList.append(bbox)
+            print(myList)
 
         # if myList is empty
         if not myList:
