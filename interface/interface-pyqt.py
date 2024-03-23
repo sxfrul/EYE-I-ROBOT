@@ -1,5 +1,4 @@
 import sys
-from math import atan2
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtCore import Qt, QPoint
@@ -88,7 +87,6 @@ class EyeWidget(QWidget):
 
             # Calculate angle from center of the eyeball to face center
             dx = face_center.x() - self.eye_center.x()
-            angle = atan2(0, dx)  # Only consider difference in x-coordinate
 
             # Limit the pupil's movement within the eyeball
             max_radius = self.eye_radius - self.pupil_radius
