@@ -97,7 +97,6 @@ class EyeWidget(QWidget):
 
             self.update()
 
-
     def closeEvent(self, event):
         self.video_thread.stop()
         self.video_thread.join()
