@@ -18,9 +18,12 @@ class VideoThread(threading.Thread):
 
     def run(self):
         cap = cv2.VideoCapture(0)
+        cap.set(3, 640)  # Set width of the frame
+        cap.set(4, 480)  # Set height of the frame
         while not self.stop_event.is_set():
             ret, frame = cap.read()
             if not ret:
+                print("no camera detected")
                 break
             frame = cv2.flip(frame, 1)
             frame, bboxs = self.eye_widget.face_detector.findFaces(frame)
