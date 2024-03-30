@@ -3,8 +3,6 @@ from cvzone.FaceDetectionModule import FaceDetector
 
 # Initialize webcam
 cap = cv2.VideoCapture(0)
-cap.set(3, 1280)  # Set width of the frame
-cap.set(4, 720)   # Set height of the frame
 
 # Initialize Face Detector
 detector = FaceDetector()
