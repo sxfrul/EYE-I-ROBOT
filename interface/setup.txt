@@ -1,0 +1,3 @@
+- Please use virtual environment
+
+- Inherit existing pyqt using and activate venv
