@@ -8,6 +8,10 @@ from cvzone.FaceDetectionModule import FaceDetector
 import re
 from time import sleep
 
+# GEN AI
+import google.generativeai as genai
+import config
+
 class VideoThread(threading.Thread):
     def __init__(self, eye_widget):
         super().__init__()
@@ -72,10 +76,26 @@ class EyeWidget(QWidget):
         self.video_thread = VideoThread(self)
         self.video_thread.start()
 
+        self.genai_thread = threading.Thread(target=self.genAI)
+        self.genai_thread.start()
+
         # Label for displaying direction
         self.direction_label = QLabel(self)
         self.direction_label.setGeometry(450, 20, 150, 30)
         self.direction_label.setStyleSheet("color: white; font-size: 20px;")
+
+    def genAI(self):
+        GOOGLE_API_KEY = config.get("gemini-api-key")
+
+        genai.configure(api_key=GOOGLE_API_KEY)
+
+        model = genai.GenerativeModel('gemini-1.0-pro') # Model : Gemini Pro
+        while True:
+            message = input("Message Gemini: ")
+            if message == "exit":
+                break
+            response = model.generate_content(message)
+            print(response.text)
 
     def paintEvent(self, event):
         painter = QPainter(self)
