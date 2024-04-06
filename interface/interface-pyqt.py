@@ -98,7 +98,7 @@ class EyeWidget(QWidget):
             maxMiddle = 512
 
             if x >= 200 and x <= 400: #badcode
-
+                self.direction_label.setText("")
                 if tempValueX > 512:
                     tempValueX -= 10
                     barrierValue = max(maxMiddle, tempValueX)
@@ -115,20 +115,14 @@ class EyeWidget(QWidget):
                 tempValueX += 10
                 barrierValue = min(maxRight, tempValueX)
                 self.pupil_center = QPoint(barrierValue, 300)
+                self.direction_label.setText("RIGHT")
 
             # LEFT-SIDE
             else:
                 tempValueX -= 10
                 barrierValue = max(maxLeft, tempValueX)
                 self.pupil_center = QPoint(barrierValue, 300)
-
-            # Update the direction label
-            if tempValueX > 512:
-                self.direction_label.setText("RIGHT")
-            elif tempValueX < 512:
                 self.direction_label.setText("LEFT")
-            else:
-                self.direction_label.setText("")
 
             self.update()
 
