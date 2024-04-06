@@ -88,31 +88,35 @@ class EyeWidget(QWidget):
 
             tempValueX = self.pupil_center.x()
 
-            if x >= 200 and x <= 400:
+            maxRight = 560
+            maxLeft = 460
+            maxMiddle = 512
+
+            if x >= 200 and x <= 400: #badcode
 
                 if tempValueX > 512:
                     tempValueX -= 10
-                    barrierValue = max(512, tempValueX)
+                    barrierValue = max(maxMiddle, tempValueX)
                     self.pupil_center = QPoint(barrierValue, 300)
                 elif tempValueX < 512:
                     tempValueX += 10
-                    barrierValue = min(512, tempValueX)
+                    barrierValue = min(maxMiddle, tempValueX)
                     self.pupil_center = QPoint(barrierValue, 300)
                 else:
                     pass
-
-            elif x > 400:
-                print("[RIGHT-SIDE]")
+            
+            # RIGHT-SIDE
+            elif x > 400: 
                 tempValueX += 10
-                barrierValue = min(540, tempValueX)
-                self.pupil_center = QPoint(barrierValue, 300)
-            else:
-                print("[LEFT-SIDE]")
-                tempValueX -= 10
-                barrierValue = max(480, tempValueX)
+                barrierValue = min(maxRight, tempValueX)
                 self.pupil_center = QPoint(barrierValue, 300)
 
-            self.eye_center = QPoint(512, 300)
+            # LEFT-SIDE
+            else:
+                tempValueX -= 10
+                barrierValue = max(maxLeft, tempValueX)
+                self.pupil_center = QPoint(barrierValue, 300)
+
             self.update()
 
     def closeEvent(self, event):
