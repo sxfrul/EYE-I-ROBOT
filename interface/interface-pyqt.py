@@ -6,6 +6,7 @@ import cv2
 import threading
 from cvzone.FaceDetectionModule import FaceDetector
 import re
+from time import sleep
 
 class VideoThread(threading.Thread):
     def __init__(self, eye_widget):
@@ -125,6 +126,14 @@ class EyeWidget(QWidget):
                 self.direction_label.setText("LEFT")
 
             self.update()
+
+        # def typewriterAnimation(self, text):
+        # split_text = [*text]
+        # string = ""
+        # for c in split_text:
+        #     string += c
+        #     self.direction_label.setText(string)
+        #     sleep(0.1)
 
     def closeEvent(self, event):
         self.video_thread.stop()
