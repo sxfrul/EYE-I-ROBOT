@@ -57,13 +57,16 @@ class EyeWidget(QWidget):
         self.initUI()
 
     def initUI(self):
+        self.setStyleSheet("background-color: black;") 
         self.setGeometry(100, 100, 1024, 600)
         self.setWindowTitle('Eyeball')
         self.setMouseTracking(True)
-        self.eye_center = QPoint(512, 300)
+        self.eye_center = QPoint(512, 300) # Position of main eyeball
         self.eye_radius = 110  # Adjust eyeball radius
+
         self.pupil_radius = 40  # Adjust pupil radius
-        self.pupil_center = self.eye_center
+        self.pupil_center = QPoint(512, 300)
+
         self.face_detector = FaceDetector(minDetectionCon=0.5)
         self.video_thread = VideoThread(self)
         self.video_thread.start()
@@ -76,28 +79,40 @@ class EyeWidget(QWidget):
         painter.setBrush(QColor(255, 255, 255))
         painter.drawEllipse(self.eye_center, self.eye_radius, self.eye_radius)
 
-        # Draw pupil
-        pupil_x = int(self.pupil_center.x() - self.pupil_radius)
-        pupil_y = int(self.pupil_center.y() - self.pupil_radius)
-        pupil_diameter = int(2 * self.pupil_radius)
         painter.setBrush(QColor(0, 0, 0))
-        painter.drawEllipse(pupil_x, pupil_y, pupil_diameter, pupil_diameter)
+        painter.drawEllipse(self.pupil_center, self.pupil_radius, self.pupil_radius)
 
     def updateEyePosition(self, face_coords):
         if face_coords:
             x, y = face_coords
-            face_center = QPoint(x, y)
 
-            # Calculate angle from center of the eyeball to face center
-            dx = face_center.x() - self.eye_center.x()
+            tempValueX = self.pupil_center.x()
 
-            # Limit the pupil's movement within the eyeball
-            max_radius = self.eye_radius - self.pupil_radius
-            radius = min(abs(dx), max_radius) * (1 if dx >= 0 else -1)  # Only consider horizontal movement
+            if x >= 200 and x <= 400:
 
-            # Update pupil position
-            self.pupil_center = self.eye_center + QPoint(round(radius), 0)
+                if tempValueX > 512:
+                    tempValueX -= 10
+                    barrierValue = max(512, tempValueX)
+                    self.pupil_center = QPoint(barrierValue, 300)
+                elif tempValueX < 512:
+                    tempValueX += 10
+                    barrierValue = min(512, tempValueX)
+                    self.pupil_center = QPoint(barrierValue, 300)
+                else:
+                    pass
 
+            elif x > 400:
+                print("[RIGHT-SIDE]")
+                tempValueX += 10
+                barrierValue = min(540, tempValueX)
+                self.pupil_center = QPoint(barrierValue, 300)
+            else:
+                print("[LEFT-SIDE]")
+                tempValueX -= 10
+                barrierValue = max(480, tempValueX)
+                self.pupil_center = QPoint(barrierValue, 300)
+
+            self.eye_center = QPoint(512, 300)
             self.update()
 
     def closeEvent(self, event):
