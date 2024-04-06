@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtCore import Qt, QPoint
 import cv2
@@ -71,6 +71,11 @@ class EyeWidget(QWidget):
         self.video_thread = VideoThread(self)
         self.video_thread.start()
 
+        # Label for displaying direction
+        self.direction_label = QLabel(self)
+        self.direction_label.setGeometry(450, 20, 150, 30)
+        self.direction_label.setStyleSheet("color: white; font-size: 20px;")
+
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
@@ -116,6 +121,14 @@ class EyeWidget(QWidget):
                 tempValueX -= 10
                 barrierValue = max(maxLeft, tempValueX)
                 self.pupil_center = QPoint(barrierValue, 300)
+
+            # Update the direction label
+            if tempValueX > 512:
+                self.direction_label.setText("RIGHT")
+            elif tempValueX < 512:
+                self.direction_label.setText("LEFT")
+            else:
+                self.direction_label.setText("")
 
             self.update()
 
