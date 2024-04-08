@@ -8,6 +8,8 @@ from cvzone.FaceDetectionModule import FaceDetector
 import re
 from time import sleep
 
+from os import system
+
 # GEN AI
 import google.generativeai as genai
 import config
@@ -68,7 +70,6 @@ class EyeWidget(QWidget):
         self.setStyleSheet("background-color: black;") 
         self.setGeometry(100, 100, 1024, 600)
         self.setWindowTitle('Eyeball')
-        self.setMouseTracking(True)
         self.eye_center = QPoint(512, 300) # Position of main eyeball
         self.eye_radius = 110  # Adjust eyeball radius
 
@@ -87,18 +88,13 @@ class EyeWidget(QWidget):
         self.direction_label.setGeometry(450, 20, 150, 30)
         self.direction_label.setStyleSheet("color: white; font-size: 20px;")
 
-    # def genAI(self):
-    #     GOOGLE_API_KEY = config.get("gemini-api-key")
-
-    #     genai.configure(api_key=GOOGLE_API_KEY)
-
-    #     model = genai.GenerativeModel('gemini-1.0-pro') # Model : Gemini Pro
-    #     while True:
-    #         message = input("Message Gemini: ")
-    #         if message == "exit":
-    #             break
-    #         response = model.generate_content(message)
-    #         print(response.text)
+        # Label for displaying direction
+        self.genai_label = QLabel(self)
+        self.genai_label.setWordWrap(True)
+        self.genai_label.setAlignment(Qt.AlignCenter)
+        self.genai_label.setGeometry(110, 100, 800, 50)
+        self.genai_label.setStyleSheet("color: white; font-size: 20px;")
+        
 
     def genAI(self):
         GOOGLE_API_KEY = config.get("gemini-api-key")
@@ -106,17 +102,15 @@ class EyeWidget(QWidget):
         genai.configure(api_key=GOOGLE_API_KEY)
 
         model = genai.GenerativeModel('gemini-1.0-pro') # Model : Gemini Pro
-
         while True:
-            try:
-                message = recordAndTranscript()
-                print(message)
-                if message:
-                    response = model.generate_content(message)
-                print(response.text)
-            except:
-                print("Error recognizing speech...")
-                continue
+            message = input("Message Gemini: ")
+            if message == "exit":
+                break
+            message += "? but answer me like you are having a conversation"
+            response = model.generate_content(message)
+            print(response.text)
+            print(len(response.text))
+            self.typewriterAnimation(response.text)
 
     def paintEvent(self, event):
         painter = QPainter(self)
@@ -168,13 +162,37 @@ class EyeWidget(QWidget):
 
             self.update()
 
-        # def typewriterAnimation(self, text):
-        # split_text = [*text]
-        # string = ""
-        # for c in split_text:
-        #     string += c
-        #     self.direction_label.setText(string)
-        #     sleep(0.1)
+    def typewriterAnimation(self, text):
+        self.tts_thread = threading.Thread(target=self.tts, args=(text,))
+        self.tts_thread.start()
+
+        split_text = text.split()
+        string = ""
+        count = 0
+        for sentence in split_text:
+            if count > 18:
+                string = "- "
+                count = 0
+
+            split_character = [*sentence]
+
+            for c in split_character:
+                string += c
+                self.genai_label.setText(string)
+                if c == ".":
+                    string = ""
+                    count = 0
+                sleep(0.07)
+
+            string += " "
+            self.genai_label.setText(string)
+            sleep(0.05)
+            count += 1
+
+    def tts(self, text):
+        message = text.replace("'", "")
+        message = "say " + message
+        system(message)
 
     def closeEvent(self, event):
         self.video_thread.stop()
