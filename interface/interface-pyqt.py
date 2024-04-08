@@ -92,7 +92,7 @@ class EyeWidget(QWidget):
         self.genai_label = QLabel(self)
         self.genai_label.setWordWrap(True)
         self.genai_label.setAlignment(Qt.AlignCenter)
-        self.genai_label.setGeometry(110, 100, 800, 50)
+        self.genai_label.setGeometry(115, 100, 800, 50)
         self.genai_label.setStyleSheet("color: white; font-size: 20px;")
         
 
@@ -106,7 +106,7 @@ class EyeWidget(QWidget):
             message = input("Message Gemini: ")
             if message == "exit":
                 break
-            message += "? but answer me like you are having a conversation."
+            message += "? answer concisely in complete sentence."
             response = model.generate_content(message)
             print(response.text)
             print(len(response.text))
@@ -170,7 +170,7 @@ class EyeWidget(QWidget):
         string = ""
         count = 0
         for sentence in split_text:
-            if count > 18:
+            if count > 20:
                 string = "- "
                 count = 0
 
