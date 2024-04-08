@@ -168,11 +168,11 @@ class EyeWidget(QWidget):
 
         split_text = text.split()
         string = ""
-        count = 0
+        textCount = 0
         for sentence in split_text:
-            if count > 20:
+            if textCount > 20:
                 string = "- "
-                count = 0
+                textCount = 0
 
             split_character = [*sentence]
 
@@ -184,7 +184,7 @@ class EyeWidget(QWidget):
             string += " "
             self.genai_label.setText(string)
             sleep(0.05)
-            count += 1
+            textCount += 1
 
     def tts(self, text):
         message = text.replace("'", "")
