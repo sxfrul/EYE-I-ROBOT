@@ -106,7 +106,7 @@ class EyeWidget(QWidget):
             message = input("Message Gemini: ")
             if message == "exit":
                 break
-            message += "? but answer me like you are having a conversation"
+            message += "? but answer me like you are having a conversation."
             response = model.generate_content(message)
             print(response.text)
             print(len(response.text))
@@ -179,9 +179,6 @@ class EyeWidget(QWidget):
             for c in split_character:
                 string += c
                 self.genai_label.setText(string)
-                if c == ".":
-                    string = ""
-                    count = 0
                 sleep(0.07)
 
             string += " "
@@ -191,6 +188,7 @@ class EyeWidget(QWidget):
 
     def tts(self, text):
         message = text.replace("'", "")
+        message = message.replace("Im", "I am")
         message = "say " + message
         system(message)
 
