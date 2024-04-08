@@ -12,6 +12,9 @@ from time import sleep
 import google.generativeai as genai
 import config
 
+# TRANSCRIPTING
+from transcript import recordAndTranscript
+
 class VideoThread(threading.Thread):
     def __init__(self, eye_widget):
         super().__init__()
@@ -84,18 +87,36 @@ class EyeWidget(QWidget):
         self.direction_label.setGeometry(450, 20, 150, 30)
         self.direction_label.setStyleSheet("color: white; font-size: 20px;")
 
+    # def genAI(self):
+    #     GOOGLE_API_KEY = config.get("gemini-api-key")
+
+    #     genai.configure(api_key=GOOGLE_API_KEY)
+
+    #     model = genai.GenerativeModel('gemini-1.0-pro') # Model : Gemini Pro
+    #     while True:
+    #         message = input("Message Gemini: ")
+    #         if message == "exit":
+    #             break
+    #         response = model.generate_content(message)
+    #         print(response.text)
+
     def genAI(self):
         GOOGLE_API_KEY = config.get("gemini-api-key")
 
         genai.configure(api_key=GOOGLE_API_KEY)
 
         model = genai.GenerativeModel('gemini-1.0-pro') # Model : Gemini Pro
+
         while True:
-            message = input("Message Gemini: ")
-            if message == "exit":
-                break
-            response = model.generate_content(message)
-            print(response.text)
+            try:
+                message = recordAndTranscript()
+                print(message)
+                if message:
+                    response = model.generate_content(message)
+                print(response.text)
+            except:
+                print("Error recognizing speech...")
+                continue
 
     def paintEvent(self, event):
         painter = QPainter(self)
