@@ -8,25 +8,44 @@ from cvzone.FaceDetectionModule import FaceDetector
 import re
 from time import sleep
 
+import websockets
+import asyncio
+
 from os import system
 
 # GEN AI
 import google.generativeai as genai
 import config
 
-# TRANSCRIPTING
-from transcript import recordAndTranscript
-
 class VideoThread(threading.Thread):
     def __init__(self, eye_widget):
         super().__init__()
+        self.log = 0
         self.eye_widget = eye_widget
         self.stop_event = threading.Event()
+        self.server_thread = threading.Thread(target=self.server_thread)
+
+    async def transmit(self, websocket, path):
+        print("Connection Established")
+        try:
+            while True:
+                await websocket.send(self.video_bytes)
+        except:
+            print("Connection closed!")
+
+    def server_thread(self):
+        print("Test")
+        asyncio.set_event_loop(asyncio.new_event_loop())
+        start_server = websockets.serve(self.transmit, host="172.20.10.2", port=8000)
+        asyncio.get_event_loop().run_until_complete(start_server)
+        asyncio.get_event_loop().run_forever()
 
     def stop(self):
         self.stop_event.set()
 
     def run(self):
+        self.server_thread.start()
+
         cap = cv2.VideoCapture(0)
         cap.set(3, 640)  # Set width of the frame
         cap.set(4, 480)  # Set height of the frame
@@ -56,6 +75,9 @@ class VideoThread(threading.Thread):
 
                     face_center = [x_coords, y_coords]
                     self.eye_widget.updateEyePosition(face_center)
+
+            encoded = cv2.imencode('.jpg', frame)[1].tobytes()
+            self.video_bytes = bytes(encoded)
 
             cv2.waitKey(1)
 
