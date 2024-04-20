@@ -116,6 +116,7 @@ class EyeWidget(QWidget):
         self.genai_label.setAlignment(Qt.AlignCenter)
         self.genai_label.setGeometry(115, 100, 800, 50)
         self.genai_label.setStyleSheet("color: white; font-size: 20px;")
+        self.showFullScreen()
         
 
     def genAI(self):
