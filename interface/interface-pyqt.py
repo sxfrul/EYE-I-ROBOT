@@ -106,11 +106,6 @@ class EyeWidget(QWidget):
         self.genai_thread.start()
 
         # Label for displaying direction
-        self.direction_label = QLabel(self)
-        self.direction_label.setGeometry(450, 20, 150, 30)
-        self.direction_label.setStyleSheet("color: white; font-size: 20px;")
-
-        # Label for displaying direction
         self.genai_label = QLabel(self)
         self.genai_label.setWordWrap(True)
         self.genai_label.setAlignment(Qt.AlignCenter)
@@ -174,14 +169,12 @@ class EyeWidget(QWidget):
                 tempValueX += 10
                 barrierValue = min(maxRight, tempValueX)
                 self.pupil_center = QPoint(barrierValue, 300)
-                self.direction_label.setText("RIGHT")
 
             # LEFT-SIDE
             else:
                 tempValueX -= 10
                 barrierValue = max(maxLeft, tempValueX)
                 self.pupil_center = QPoint(barrierValue, 300)
-                self.direction_label.setText("LEFT")
 
             self.update()
 
