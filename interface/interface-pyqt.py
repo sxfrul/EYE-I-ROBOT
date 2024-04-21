@@ -17,6 +17,13 @@ from os import system
 import google.generativeai as genai
 import config
 
+# TTS
+import pyttsx3
+
+engine = pyttsx3.init()
+engine.setProperty('rate', 150)
+engine.setProperty('volume', 5.5)
+
 class VideoThread(threading.Thread):
     def __init__(self, eye_widget):
         super().__init__()
@@ -111,8 +118,15 @@ class EyeWidget(QWidget):
         self.genai_label.setAlignment(Qt.AlignCenter)
         self.genai_label.setGeometry(115, 100, 800, 50)
         self.genai_label.setStyleSheet("color: white; font-size: 20px;")
+
+        self.engine = pyttsx3.init()
+        self.engine.setProperty('rate', 150)
+        self.engine.setProperty('volume', 5.5)
         self.showFullScreen()
         
+    def speak(self, text):
+        self.engine.say(text)
+        self.engine.runAndWait()
 
     def genAI(self):
         GOOGLE_API_KEY = config.get("gemini-api-key")
@@ -152,7 +166,6 @@ class EyeWidget(QWidget):
             maxMiddle = 512
 
             if x >= 200 and x <= 400: #badcode
-                self.direction_label.setText("")
                 if tempValueX > 512:
                     tempValueX -= 10
                     barrierValue = max(maxMiddle, tempValueX)
@@ -206,7 +219,7 @@ class EyeWidget(QWidget):
         message = text.replace("'", "")
         message = message.replace("Im", "I am")
         message = "say " + message
-        system(message)
+        self.speak(message)
 
     def closeEvent(self, event):
         self.video_thread.stop()
