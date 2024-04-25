@@ -7,6 +7,7 @@ import threading
 from cvzone.FaceDetectionModule import FaceDetector
 import re
 from time import sleep
+from os import system
 
 import websockets
 import asyncio
@@ -140,6 +141,7 @@ class EyeWidget(QWidget):
                 try:
                     passiveRecord = recordAndTranscript()
                     if "robot" in passiveRecord:
+                        system("aplay wakeup.wav")
                         self.genai_label.setText("LISTENING!")
                         print("How can i help you...")
                         asleep = False
