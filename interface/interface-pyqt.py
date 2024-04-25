@@ -42,7 +42,7 @@ class VideoThread(threading.Thread):
     def server_thread(self):
         print("Test")
         asyncio.set_event_loop(asyncio.new_event_loop())
-        start_server = websockets.serve(self.transmit, host="172.20.10.2", port=8000)
+        start_server = websockets.serve(self.transmit, host="172.20.10.4", port=8000)
         asyncio.get_event_loop().run_until_complete(start_server)
         asyncio.get_event_loop().run_forever()
 
@@ -126,22 +126,6 @@ class EyeWidget(QWidget):
     def speak(self, text):
         self.engine.say(text)
         self.engine.runAndWait()
-
-    # def genAI(self):
-    #     GOOGLE_API_KEY = config.get("gemini-api-key")
-
-    #     genai.configure(api_key=GOOGLE_API_KEY)
-
-    #     model = genai.GenerativeModel('gemini-1.0-pro') # Model : Gemini Pro
-    #     while True:
-    #         message = input("Message Gemini: ")
-    #         if message == "exit":
-    #             break
-    #         message += "? answer concisely in complete sentence."
-    #         response = model.generate_content(message)
-    #         print(response.text)
-    #         print(len(response.text))
-    #         self.typewriterAnimation(response.text)
 
     def genAI(self):
         GOOGLE_API_KEY = config.get("gemini-api-key")
