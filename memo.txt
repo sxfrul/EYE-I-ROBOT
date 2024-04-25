@@ -6,3 +6,13 @@ plan
 - add gpio live status
 - make it only one power supply
 - add background (black) to front-end
+
+setup
+pip install opencv-python cvzone mediapipe
+pip install -U google-generativeai==0.4.1
+pip install websockets pyttsx3 
+pip install SpeechRecognition pyaudio
+
+sudo apt-get install libasound-dev
+sudo apt-get install flac
+sudo apt-get install espeak

@@ -156,10 +156,11 @@ class EyeWidget(QWidget):
                 try:
                     passiveRecord = recordAndTranscript()
                     if "robot" in passiveRecord:
+                        self.genai_label.setText("LISTENING!")
                         print("How can i help you...")
                         asleep = False
                 except:
-                    print("No wakeword detected")
+                    self.genai_label.setText("")
                     continue
             takingInput = True
             while takingInput:
@@ -172,6 +173,7 @@ class EyeWidget(QWidget):
                     self.typewriterAnimation(response.text)
                 except:
                     print("No command given please retry...")
+                    self.genai_label.setText("")
                     takingInput = False
 
     def paintEvent(self, event):
@@ -248,7 +250,6 @@ class EyeWidget(QWidget):
     def tts(self, text):
         message = text.replace("'", "")
         message = message.replace("Im", "I am")
-        message = "say " + message
         self.speak(message)
 
     def closeEvent(self, event):
