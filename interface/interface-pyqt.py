@@ -11,14 +11,13 @@ from time import sleep
 import websockets
 import asyncio
 
-from os import system
-
 # GEN AI
 import google.generativeai as genai
 import config
 
 # TTS
 import pyttsx3
+from transcript import recordAndTranscript
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 150)
@@ -128,21 +127,52 @@ class EyeWidget(QWidget):
         self.engine.say(text)
         self.engine.runAndWait()
 
+    # def genAI(self):
+    #     GOOGLE_API_KEY = config.get("gemini-api-key")
+
+    #     genai.configure(api_key=GOOGLE_API_KEY)
+
+    #     model = genai.GenerativeModel('gemini-1.0-pro') # Model : Gemini Pro
+    #     while True:
+    #         message = input("Message Gemini: ")
+    #         if message == "exit":
+    #             break
+    #         message += "? answer concisely in complete sentence."
+    #         response = model.generate_content(message)
+    #         print(response.text)
+    #         print(len(response.text))
+    #         self.typewriterAnimation(response.text)
+
     def genAI(self):
         GOOGLE_API_KEY = config.get("gemini-api-key")
 
         genai.configure(api_key=GOOGLE_API_KEY)
 
         model = genai.GenerativeModel('gemini-1.0-pro') # Model : Gemini Pro
+
         while True:
-            message = input("Message Gemini: ")
-            if message == "exit":
-                break
-            message += "? answer concisely in complete sentence."
-            response = model.generate_content(message)
-            print(response.text)
-            print(len(response.text))
-            self.typewriterAnimation(response.text)
+            asleep = True
+            while asleep:
+                try:
+                    passiveRecord = recordAndTranscript()
+                    if "robot" in passiveRecord:
+                        print("How can i help you...")
+                        asleep = False
+                except:
+                    print("No wakeword detected")
+                    continue
+            takingInput = True
+            while takingInput:
+                try:
+                    message = recordAndTranscript()
+                    print(message)
+                    message += "? answer concisely in complete sentence."
+                    response = model.generate_content(message)
+                    print(response.text)
+                    self.typewriterAnimation(response.text)
+                except:
+                    print("No command given please retry...")
+                    takingInput = False
 
     def paintEvent(self, event):
         painter = QPainter(self)
