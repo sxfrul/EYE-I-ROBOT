@@ -83,7 +83,8 @@ class VideoThread(threading.Thread):
                     face_center = [x_coords, y_coords]
                     self.eye_widget.updateEyePosition(face_center)
 
-            encoded = cv2.imencode('.jpg', frame)[1].tobytes()
+            self.encodedjpg = cv2.imencode('jpg', frame)[1]
+            encoded = self.encodedjpg.tobytes()
             self.video_bytes = bytes(encoded)
 
             cv2.waitKey(1)
@@ -134,9 +135,10 @@ class EyeWidget(QWidget):
         genai.configure(api_key=GOOGLE_API_KEY)
 
         model = genai.GenerativeModel('gemini-1.0-pro') # Model : Gemini Pro
+        self.modelVision = genai.GenerativeModel('gemini-pro-vision')
         chat = model.start_chat(history=[])
 
-        response = chat.send_message("If i say turn on the kitchen/bedroom/toilet lights, response with 'Turning on the kitchen/bedroom/toilet lights'")
+        response = self.chat.send_message("If i say turn on the kitchen/bedroom/toilet lights, response with 'Turning on the kitchen/bedroom/toilet lights'")
 
         while True:
             asleep = True
@@ -153,8 +155,11 @@ class EyeWidget(QWidget):
             takingInput = True
             while takingInput:
                 try:
-                    message = recordAndTranscript()
+                    message = recordAndTranscript() 
                     print(message)
+                    if message == "use camera":
+                        self.genAIVision()
+                        takingInput = False
                     message += "? answer concisely in complete sentence."
                     response = chat.send_message(message)
                     print(response.text)
@@ -164,6 +169,17 @@ class EyeWidget(QWidget):
                 except:
                     print("No command given please retry...")
                     takingInput = False
+
+    def genAIVision(self):
+        self.genai_label.setText("CAMERA MODE")
+        try:
+            message = recordAndTranscript() 
+            response = self.modelVision.generate_content([message, self.encodedjpg])
+            self.typewriterAnimation(response.text)
+        except:
+            print("Camera prompt failed...")
+        return
+
 
     async def homeAutomationDebug(self, reply):
         uri = "ws://172.20.10.7:80"  # Replace <nodeMCU_IP_address> with NodeMCU's IP address
