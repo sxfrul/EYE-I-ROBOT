@@ -7,7 +7,6 @@ import threading
 from cvzone.FaceDetectionModule import FaceDetector
 import re
 from time import sleep
-from os import system
 
 import websockets
 import asyncio
@@ -19,6 +18,7 @@ import config
 # TTS
 import pyttsx3
 from transcript import recordAndTranscript
+from os import system
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 150)
@@ -141,11 +141,10 @@ class EyeWidget(QWidget):
                 try:
                     passiveRecord = recordAndTranscript()
                     if "robot" in passiveRecord:
-                        system("aplay wakeup.wav")
+                        system("aplay buttonpress.wav")
                         self.genai_label.setText("LISTENING!")
-                        print("How can i help you...")
                         asleep = False
-                except:
+                except :
                     self.genai_label.setText("")
                     continue
             takingInput = True
@@ -157,9 +156,9 @@ class EyeWidget(QWidget):
                     response = model.generate_content(message)
                     print(response.text)
                     self.typewriterAnimation(response.text)
+                    takingInput = False
                 except:
                     print("No command given please retry...")
-                    self.genai_label.setText("")
                     takingInput = False
 
     def paintEvent(self, event):
@@ -235,7 +234,9 @@ class EyeWidget(QWidget):
 
     def tts(self, text):
         message = text.replace("'", "")
+        message = text.replace("*", "")
         message = message.replace("Im", "I am")
+        message = "say " + message
         self.speak(message)
 
     def closeEvent(self, event):
