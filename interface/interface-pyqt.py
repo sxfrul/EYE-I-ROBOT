@@ -146,7 +146,7 @@ class EyeWidget(QWidget):
             while asleep:
                 try:
                     passiveRecord = recordAndTranscript()
-                    if "robot" in passiveRecord:
+                    if "robot" in passiveRecord or "iRobot" in passiveRecord or "i robot" in passiveRecord:
                         system("aplay wakeup.wav")
                         self.genai_label.setText("LISTENING!")
                         asleep = False
@@ -159,9 +159,11 @@ class EyeWidget(QWidget):
                     message = recordAndTranscript() 
                     print(message)
                     if message == "use camera":
+                        system("aplay wakeup.wav")
                         self.genAIVision()
-                        takingInput = False
+                        print("Vision closed.")
                         break
+                    print("after camera, this message doesnt appear")
                     message += "? answer concisely in complete sentence."
                     response = chat.send_message(message)
                     print(response.text)
@@ -176,7 +178,7 @@ class EyeWidget(QWidget):
         self.genai_label.setText("CAMERA MODE")
         try:
             message = recordAndTranscript() 
-            response = self.modelVision.generate_content([message, self.video_thread.encodedjpg])
+            response = self.modelVision.generate_content([message, self.video_thread.videoPIL])
             self.typewriterAnimation(response.text)
         except Exception as e:
             print("Camera prompt failed...")
