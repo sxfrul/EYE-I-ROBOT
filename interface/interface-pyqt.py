@@ -10,6 +10,7 @@ from time import sleep
 
 import websockets
 import asyncio
+from PIL import Image
 
 # GEN AI
 import google.generativeai as genai
@@ -62,6 +63,7 @@ class VideoThread(threading.Thread):
                 print("no camera detected")
                 break
             frame = cv2.flip(frame, 1)
+            self.videoPIL = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
             frame, bboxs = self.eye_widget.face_detector.findFaces(frame)
             myList = []
 
@@ -83,9 +85,8 @@ class VideoThread(threading.Thread):
                     face_center = [x_coords, y_coords]
                     self.eye_widget.updateEyePosition(face_center)
 
-            self.encodedjpg = cv2.imencode('jpg', frame)[1]
-            encoded = self.encodedjpg.tobytes()
-            self.video_bytes = bytes(encoded)
+            encoded = cv2.imencode('.jpg', frame)[1].tobytes()
+            video_bytes = bytes(encoded)
 
             cv2.waitKey(1)
 
@@ -138,7 +139,7 @@ class EyeWidget(QWidget):
         self.modelVision = genai.GenerativeModel('gemini-pro-vision')
         chat = model.start_chat(history=[])
 
-        response = self.chat.send_message("If i say turn on the kitchen/bedroom/toilet lights, response with 'Turning on the kitchen/bedroom/toilet lights'")
+        response = chat.send_message("If i say turn on the kitchen/bedroom/toilet lights, response with 'Turning on the kitchen/bedroom/toilet lights'")
 
         while True:
             asleep = True
@@ -160,6 +161,7 @@ class EyeWidget(QWidget):
                     if message == "use camera":
                         self.genAIVision()
                         takingInput = False
+                        break
                     message += "? answer concisely in complete sentence."
                     response = chat.send_message(message)
                     print(response.text)
@@ -174,9 +176,9 @@ class EyeWidget(QWidget):
         self.genai_label.setText("CAMERA MODE")
         try:
             message = recordAndTranscript() 
-            response = self.modelVision.generate_content([message, self.encodedjpg])
+            response = self.modelVision.generate_content([message, self.video_thread.encodedjpg])
             self.typewriterAnimation(response.text)
-        except:
+        except Exception as e:
             print("Camera prompt failed...")
         return
 
