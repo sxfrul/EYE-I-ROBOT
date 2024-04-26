@@ -144,7 +144,7 @@ class EyeWidget(QWidget):
                 try:
                     passiveRecord = recordAndTranscript()
                     if "robot" in passiveRecord:
-                        system("aplay buttonpress.wav")
+                        system("aplay wakeup.wav")
                         self.genai_label.setText("LISTENING!")
                         asleep = False
                 except :
