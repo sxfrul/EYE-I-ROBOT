@@ -134,6 +134,7 @@ class EyeWidget(QWidget):
         genai.configure(api_key=GOOGLE_API_KEY)
 
         model = genai.GenerativeModel('gemini-1.0-pro') # Model : Gemini Pro
+        chat = model.start_chat(history=[])
 
         while True:
             asleep = True
@@ -153,7 +154,7 @@ class EyeWidget(QWidget):
                     message = recordAndTranscript()
                     print(message)
                     message += "? answer concisely in complete sentence."
-                    response = model.generate_content(message)
+                    response = chat.send_message(message)
                     print(response.text)
                     self.typewriterAnimation(response.text)
                     takingInput = False
