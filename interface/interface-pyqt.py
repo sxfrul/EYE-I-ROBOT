@@ -171,20 +171,25 @@ class EyeWidget(QWidget):
 
         try:
             async with websockets.connect(uri) as websocket:
+                data = ""
                 if "kitchen" in reply and "on" in reply:
-                    await websocket.send("led1:on")
+                    data += "led1:on"
                 elif "kitchen" in reply and "off" in reply:
-                    await websocket.send("led1:off")
+                    data += "led1:off"
                 if "bedroom" in reply and "on" in reply:
-                    await websocket.send("led2:on")
+                    data += "led2:on"
                 elif "bedroom" in reply and "off" in reply:
-                    await websocket.send("led2:off")
+                    data += "led2:off"
                 if "toilet" in reply and "on" in reply:
-                    await websocket.send("led3:on")
+                    data += "led3:on"
                 elif "toilet" in reply and "off" in reply:
-                    await websocket.send("led3:off")
+                    data += "led3:off"
                 else:
                     pass
+                if data != "":
+                    print(data)
+                    await websocket.send(data)
+
         except Exception as e:
             print(f"Failed to connect: {e}")
 
@@ -266,7 +271,6 @@ class EyeWidget(QWidget):
         message = text.replace("'", "")
         message = text.replace("*", "")
         message = message.replace("Im", "I am")
-        message = "say " + message
         self.speak(message)
 
     def closeEvent(self, event):

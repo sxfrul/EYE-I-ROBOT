@@ -8,10 +8,12 @@ plan
 - add background (black) to front-end
 
 setup
-pip install opencv-python cvzone mediapipe
+python -m venv --system-site-packages myenv
+
+pip install opencv-python==4.9.0.80 cvzone==1.6.1 mediapipe==0.10.9
 pip install -U google-generativeai==0.4.1
-pip install websockets pyttsx3 
-pip install SpeechRecognition pyaudio
+pip install websockets==12.0 pyttsx3==2.90 
+pip install SpeechRecognition==3.10.3
 
 sudo apt-get install libasound-dev
 sudo apt-get install flac
