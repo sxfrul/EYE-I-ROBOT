@@ -159,10 +159,37 @@ class EyeWidget(QWidget):
                     response = chat.send_message(message)
                     print(response.text)
                     self.typewriterAnimation(response.text)
+                    asyncio.run(self.async_main(response.text))
                     takingInput = False
                 except:
                     print("No command given please retry...")
                     takingInput = False
+
+    async def homeAutomationDebug(self, reply):
+        uri = "ws://172.20.10.7:80"  # Replace <nodeMCU_IP_address> with NodeMCU's IP address
+        print(reply)
+
+        try:
+            async with websockets.connect(uri) as websocket:
+                if "kitchen" in reply and "on" in reply:
+                    await websocket.send("led1:on")
+                elif "kitchen" in reply and "off" in reply:
+                    await websocket.send("led1:off")
+                if "bedroom" in reply and "on" in reply:
+                    await websocket.send("led2:on")
+                elif "bedroom" in reply and "off" in reply:
+                    await websocket.send("led2:off")
+                if "toilet" in reply and "on" in reply:
+                    await websocket.send("led3:on")
+                elif "toilet" in reply and "off" in reply:
+                    await websocket.send("led3:off")
+                else:
+                    pass
+        except Exception as e:
+            print(f"Failed to connect: {e}")
+
+    async def async_main(self, reply):
+        await self.homeAutomationDebug(reply)
 
     def paintEvent(self, event):
         painter = QPainter(self)
