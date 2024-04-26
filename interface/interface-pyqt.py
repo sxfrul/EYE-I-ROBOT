@@ -136,6 +136,8 @@ class EyeWidget(QWidget):
         model = genai.GenerativeModel('gemini-1.0-pro') # Model : Gemini Pro
         chat = model.start_chat(history=[])
 
+        response = chat.send_message("If i say turn on the kitchen/bedroom/toilet lights, response with 'Turning on the kitchen/bedroom/toilet lights'")
+
         while True:
             asleep = True
             while asleep:
