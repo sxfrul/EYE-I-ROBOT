@@ -42,8 +42,7 @@ Relevant links:
 ## PIITRAM 2024 (at USIM)
 
 > ### Description
-> Download Abstract:
-> [EYE(i) ROBOT ABSTRACT - PIITRAM2024.pdf](https://github.com/sxfrul/EYE-I-ROBOT/files/14393279/EYE.i.ROBOT.ABSTRACT.-.PIITRAM2024.1.pdf)
+> [Download Abstract](https://github.com/sxfrul/EYE-I-ROBOT/files/14393279/EYE.i.ROBOT.ABSTRACT.-.PIITRAM2024.1.pdf)
 > 
 > <img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/ee262ca9-4e32-411d-91b8-cb5206f5b520" width="120">
 
