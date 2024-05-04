@@ -1,15 +1,7 @@
 - separate the frame for detecting face and frame to stream
 - improves the performance
-- send stream when connected, if not still have the servo working without client connection
 - calculate optimal quadratic and center points
 
 plan
 - add gpio live status
 - make it only one power supply
-
-plan (14/3/2024):
-- automatic speech recognition
-- GUI for eyeball
-- face detection
-- home automation
-- LLM integration
