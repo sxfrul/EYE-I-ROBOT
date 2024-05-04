@@ -12,28 +12,30 @@ Relevant links:
 [Mobile Application](https://github.com/sxfrul/Video-Streaming-Using-WebSockets) |
 [ESP8266 Smart Light Demo](https://github.com/sxfrul/EYE--i--ROBOT--lights_demo-)
 
-
-
-
-## UiTM Arduino Showcase 2023
-
+## Creation de UiTM 2024
 > ### Description
-> User-tracking robotic eyes hooked up with ChatGPT (as brainpower) to serve as generic personal assistant robot
+> Download Abstract:
+> Download Extended Abstract:
+>
 > 
-> <img width="200" alt="EYE(i) ROBOT Front View" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/d1129880-a669-4e4d-9dc2-bc0b882b5f18">
 
-> ### Achievement
-> - Won 3rd place in UITM's Arduino Showcase 2023 (cash-prize of RM100)
-> 
-> <img alt="The booth" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/4cb538b7-96b2-477a-8499-15483191adfd" width=60% height="auto">
-> <img alt="Cash prize" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/0d9d6518-53f1-4785-84a0-59b091373b7d" width=60%">
+> ### Achievements
+> - awarded Gold in Foundation/Equivalent Category
+>
+>   <br />
 
-> ### Shortcomings
-> - Microphone does not pick up wakewords in a loud environment
-> - Goes crazy when there is more than one person detected on tracker
-> - Bad build quality
-> - Not a fully embedded machine
-> - Does not have an actual monetizable use case (aside from being able to track and talk)
+> ### Update Log
+> - does not use servos anymore
+> - Eyeball is now done through a screen and PyQt (interface)
+> - app camera stream and eye movement can work simultaneously
+> - utilizes Gemini (previously ChatGPT), both Gemini Pro and Gemini Pro Vision
+> - Text Generation is faster
+> - can now translate what it sees from the camera using Gemini Pro Vision
+
+> ### Future Plans
+> - serve certain parts on the cloud (AWS or Azure) for remote controls
+> - passively listen for wakewords
+> - improve mic pickups
 
 ## PIITRAM 2024 (at USIM)
 
@@ -66,3 +68,23 @@ Relevant links:
 > - Use only one powersupply
 > - Resolve the servo power issue
 > - Get better speaker
+
+## UiTM Arduino Showcase 2023
+
+> ### Description
+> User-tracking robotic eyes hooked up with ChatGPT (as brainpower) to serve as generic personal assistant robot
+> 
+> <img width="200" alt="EYE(i) ROBOT Front View" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/d1129880-a669-4e4d-9dc2-bc0b882b5f18">
+
+> ### Achievement
+> - Won 3rd place in UITM's Arduino Showcase 2023 (cash-prize of RM100)
+> 
+> <img alt="The booth" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/4cb538b7-96b2-477a-8499-15483191adfd" width=60% height="auto">
+> <img alt="Cash prize" src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/0d9d6518-53f1-4785-84a0-59b091373b7d" width=60%">
+
+> ### Shortcomings
+> - Microphone does not pick up wakewords in a loud environment
+> - Goes crazy when there is more than one person detected on tracker
+> - Bad build quality
+> - Not a fully embedded machine
+> - Does not have an actual monetizable use case (aside from being able to track and talk)
