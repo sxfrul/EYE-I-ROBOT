@@ -14,14 +14,16 @@ Relevant links:
 
 ## Creation de UiTM 2024
 > ### Description
-> Download Abstract:
-> Download Extended Abstract:
->
-> 
+> [Download Abstract](https://github.com/sxfrul/EYE-I-ROBOT/files/15206148/CDU.Abstract.pdf) <br />
+> [Download Extended Abstract](https://github.com/sxfrul/EYE-I-ROBOT/files/15206156/CDU.Extended.Abstract.pdf)
+> <br />
+> <br />
+> ![image](https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/cecceeef-cba0-4c75-a4ec-ffeb6de828d5)
 
 > ### Achievements
 > - awarded Gold in Foundation/Equivalent Category
->
+> <img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/b0596c38-bbda-4833-bede-309dd2e862da" width="400">
+> <img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/55967d2f-c7b0-4e0b-9ec8-a16dc45fc94c" width="400">
 >   <br />
 
 > ### Update Log
@@ -43,7 +45,8 @@ Relevant links:
 > Download Abstract:
 > [EYE(i) ROBOT ABSTRACT - PIITRAM2024.pdf](https://github.com/sxfrul/EYE-I-ROBOT/files/14393279/EYE.i.ROBOT.ABSTRACT.-.PIITRAM2024.1.pdf)
 > 
-> <img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/f0701f14-698f-42ee-aa6d-6483e16673dd" width="150">
+> <img src="https://github.com/sxfrul/EYE-I-ROBOT/assets/44408869/ee262ca9-4e32-411d-91b8-cb5206f5b520" width="120">
+
 
 > ### Achievements
 > - awarded Silver in Category A
